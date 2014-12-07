@@ -10,6 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+
+    // Listen for swipes left or right
+    @IBAction func SwipeLeftAction(sender: UISwipeGestureRecognizer) {
+        println("Swiped left")
+        println(sender)
+    }
+    
+    @IBAction func SwipeRightAction(sender: UISwipeGestureRecognizer) {
+        println("Swiped Right")
+        println(sender.locationInView(sender.view))
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

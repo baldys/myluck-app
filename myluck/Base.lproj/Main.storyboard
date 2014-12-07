@@ -1,53 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="myluck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="myluck" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ef4-gY-7R9">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="302"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hd0-u2-oHE">
-                                <rect key="frame" x="0.0" y="299" width="605" height="293"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2S-wM-joq">
+                                <rect key="frame" x="0.0" y="256" width="60" height="56"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="bhG-zA-kGV"/>
+                                    <constraint firstAttribute="height" constant="56" id="tDM-RB-0An"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" red="0.17254901959999999" green="0.50980392159999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.16564284709999999" green="0.5576171875" blue="0.1696841379" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.50588235294117645" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hd0-u2-oHE" secondAttribute="bottom" id="P3B-G0-3yA"/>
-                            <constraint firstItem="ef4-gY-7R9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WGF-VC-c3R"/>
-                            <constraint firstItem="ef4-gY-7R9" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="dvY-oI-6gS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ef4-gY-7R9" secondAttribute="trailing" id="hlF-22-F7y"/>
-                            <constraint firstItem="ef4-gY-7R9" firstAttribute="centerX" secondItem="hd0-u2-oHE" secondAttribute="centerX" priority="250" id="rxD-XW-zIu"/>
-                            <constraint firstItem="ef4-gY-7R9" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="tHh-Af-fdT"/>
-                            <constraint firstItem="ef4-gY-7R9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" priority="750" id="v7z-gB-aTi"/>
-                            <constraint firstItem="ef4-gY-7R9" firstAttribute="width" secondItem="hd0-u2-oHE" secondAttribute="width" id="xUe-D5-i3V"/>
+                            <constraint firstItem="l2S-wM-joq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="98S-zg-NqW"/>
+                            <constraint firstAttribute="centerY" secondItem="l2S-wM-joq" secondAttribute="centerY" id="C38-6i-VKn"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="rxD-XW-zIu"/>
-                                <exclude reference="xUe-D5-i3V"/>
-                            </mask>
-                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="nMp-nV-xWG" appends="YES" id="MtM-IE-bxa"/>
+                            <outletCollection property="gestureRecognizers" destination="aLH-fZ-QyX" appends="YES" id="6hZ-sD-r1I"/>
+                        </connections>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="nMp-nV-xWG">
+                    <connections>
+                        <action selector="SwipeLeftAction:" destination="BYZ-38-t0r" id="5SG-9c-hEB"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="aLH-fZ-QyX">
+                    <connections>
+                        <action selector="SwipeRightAction:" destination="BYZ-38-t0r" id="aHJ-Wk-iLO"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="140" y="307"/>
         </scene>
     </scenes>
 </document>
