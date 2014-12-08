@@ -11,6 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var topDoorBg: UIView!
 
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -32,7 +33,7 @@ class ViewController: UIViewController {
             var location = touch.locationInView(self.view)
             startPanX = location.x
             startPanY = location.y
-            var halfHeight = self.view.bounds.size.height / 2
+            var halfHeight = self.view.frame.size.height / 2
             
             if(startPanY < halfHeight) {
                 startPanDoor = "top"
@@ -41,9 +42,66 @@ class ViewController: UIViewController {
             }
 
         } else if(touch.state == UIGestureRecognizerState.Changed) {
-            // Move the door
+            // Move the door in the direction of the swipe
+            var changeX:CGFloat = touch.locationInView(self.view).x - startPanX
             
-            println(".")
+            
+        
+
+            var frame = topDoorBg.frame
+            if(changeX > 0) {
+                // Moving right
+                frame.origin.x = changeX
+            } else {
+                // Moving left
+                frame.origin.x = self.view.frame.size.width + changeX // changeX is negative
+            }
+            frame.origin.x += changeX
+            println("setting frame to")
+            println(frame.origin.x)
+            
+//            frame.origin.y = 0.0
+            topDoorBg.frame = frame
+            
+            
+            return
+            
+            
+            
+
+            
+            
+            var bounds = topDoorBg.bounds
+            
+            
+            
+            
+            bounds.origin.x += changeX
+            
+            
+
+            
+            
+            topDoorBg.bounds = bounds
+            
+            println(bounds.origin.x)
+            
+            //View.frame = CGRectOffset( aView.frame, 10, 10 );
+            
+            
+//            topDoorBg.frame.offset(dx: -1.0, dy:-1.0)
+//
+//            
+//            println(changeX)
+//            
+//            
+//            println(topDoorBg.frame.origin)
+            
+            
+            //println(topDoorBg.frame.origin.x)
+//            topDoorBg.frame = CGRectOffset(topDoorBg.frame, changeX, 0)
+            
+//            println(".")
         } else if(touch.state == UIGestureRecognizerState.Ended) {
             var halfWidth = self.view.bounds.size.width / 2
             var distanceX = abs(touch.locationInView(self.view).x - startPanX)
@@ -51,6 +109,11 @@ class ViewController: UIViewController {
                 println("CHOICE LOCKED IN")
             } else {
                 println("cancelled")
+                
+                var frame = topDoorBg.frame
+                frame.origin.x = self.view.frame.size.width
+                topDoorBg.frame = frame
+                
             }
 
         }
@@ -76,9 +139,8 @@ class ViewController: UIViewController {
         // Set colours
         self.view.backgroundColor = colors.primaryLight
         scoreLabel.textColor = colors.primaryLight
-
         
-        
+        topDoorBg.backgroundColor = colors.primaryDark
         
         
         // Do any additional setup after loading the view, typically from a nib.
