@@ -12,6 +12,7 @@ import UIKit
 
 class PersonalBestViewController: UIViewController {
 
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBAction func TapViewAction(sender: UITapGestureRecognizer) {
         
         self.backToGame()
@@ -27,10 +28,8 @@ class PersonalBestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println("PersonalBestViewController loaded")
-        
 
-
+        self.scoreLabel.text = String(game.personalBest)
         
         
         // Do any additional setup after loading the view, typically from a nib.
