@@ -13,7 +13,7 @@ import UIKit
 
 struct Config {
     // What's behind the door
-    static var prize = "6"
+    static var prize = "7"
 
     // Colors
     struct colors {
