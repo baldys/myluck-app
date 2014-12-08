@@ -38,6 +38,7 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="nMp-nV-xWG" appends="YES" id="MtM-IE-bxa"/>
                             <outletCollection property="gestureRecognizers" destination="aLH-fZ-QyX" appends="YES" id="6hZ-sD-r1I"/>
+                            <outletCollection property="gestureRecognizers" destination="eCu-5z-360" appends="YES" id="7Cc-ii-AgW"/>
                         </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -53,6 +54,11 @@
                         <action selector="SwipeRightAction:" destination="BYZ-38-t0r" id="aHJ-Wk-iLO"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="eCu-5z-360">
+                    <connections>
+                        <action selector="PanGestureAction:" destination="BYZ-38-t0r" id="AMC-9h-8hi"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="140" y="307"/>
         </scene>
