@@ -74,9 +74,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Set colours
-        self.view.backgroundColor = config.lightColor
-        scoreLabel.textColor = config.lightColor
-
+        self.view.backgroundColor = colors.primaryLight
+        scoreLabel.textColor = colors.primaryLight
 
         
         
