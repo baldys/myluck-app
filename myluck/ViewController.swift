@@ -9,11 +9,16 @@
 import UIKit
 
 
+
 class ViewController: UIViewController {
 
+    var panThreshold = 0.5 // how far the slide must go for it to lock in the answer
+    
     @IBOutlet weak var topDoorBg: UIView!
+    @IBOutlet weak var bottomDoorBg: UIView!
 
     @IBOutlet weak var scoreLabel: UILabel!
+    
     
     
     func resetUI() {
@@ -22,6 +27,7 @@ class ViewController: UIViewController {
         scoreLabel.textColor = Config.colors.primaryLight
         
         topDoorBg.backgroundColor = Config.colors.primaryDark
+        bottomDoorBg.backgroundColor = Config.colors.primaryDark
         
 
         // Move door backgrounds out of view and hide them
@@ -29,6 +35,13 @@ class ViewController: UIViewController {
         frame.origin.x = self.view.frame.width * 2
         topDoorBg.frame = frame
         topDoorBg.hidden = true
+        
+        var frame2 = bottomDoorBg.frame
+        frame2.origin.x = self.view.frame.width * 2
+        bottomDoorBg.frame = frame2
+        bottomDoorBg.hidden = true
+        
+        scoreLabel.text = String(game.streak)
     }
     
 
@@ -55,46 +68,39 @@ class ViewController: UIViewController {
             
             if(startPanY < halfHeight) {
                 startPanDoor = "top"
+                topDoorBg.hidden = false
             } else {
                 startPanDoor = "bottom"
+                bottomDoorBg.hidden = false
             }
-            
-            topDoorBg.hidden = false
 
         } else if(touch.state == UIGestureRecognizerState.Changed) {
             // Move the door in the direction of the swipe
             var changeX:CGFloat = touch.locationInView(self.view).x - startPanX
             
-            
-        
-
-            var frame = topDoorBg.frame
+            var targetFrame = startPanDoor == "top" ? topDoorBg : bottomDoorBg
+            var frame = targetFrame.frame
             if(changeX > 0) {
                 // Moving right
-                frame.origin.x = changeX - topDoorBg.frame.size.width
+                frame.origin.x = changeX - targetFrame.frame.size.width
             } else {
                 // Moving left
                 frame.origin.x = self.view.frame.size.width + changeX // changeX is negative
             }
-            topDoorBg.frame = frame
-            
+            targetFrame.frame = frame
             
 
         } else if(touch.state == UIGestureRecognizerState.Ended) {
-            var halfWidth = self.view.bounds.size.width / 2
-            var distanceX = abs(touch.locationInView(self.view).x - startPanX)
-            if(distanceX > halfWidth) {
+            var lockInDistance = Double(self.view.bounds.size.width) * panThreshold
+            var distanceX = Double(abs(touch.locationInView(self.view).x - startPanX))
+            if(distanceX >= lockInDistance) {
                 println("CHOICE LOCKED IN")
+                var answeredRight = game.choose(self.startPanDoor)
             } else {
-                println("cancelled")
+                println("Cancelled")
             }
             
-            
-            
-            
             resetUI()
-
-
         }
         
     }

@@ -33,13 +33,19 @@
                                 <color key="textColor" red="0.17254901959999999" green="0.50980392159999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hih-OR-Be6">
+                                <rect key="frame" x="80" y="265" width="160" height="237"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="height" secondItem="iSc-bR-h7F" secondAttribute="height" multiplier="2" id="0Ck-GL-f7d"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hih-OR-Be6" secondAttribute="bottom" id="5G7-B1-GWb"/>
                             <constraint firstItem="l2S-wM-joq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="98S-zg-NqW"/>
                             <constraint firstAttribute="centerY" secondItem="l2S-wM-joq" secondAttribute="centerY" id="C38-6i-VKn"/>
+                            <constraint firstItem="iSc-bR-h7F" firstAttribute="width" secondItem="hih-OR-Be6" secondAttribute="width" id="L2M-jx-IAs"/>
                             <constraint firstItem="iSc-bR-h7F" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-16" id="LQq-eD-UDa"/>
                             <constraint firstAttribute="width" secondItem="iSc-bR-h7F" secondAttribute="width" multiplier="0.1" id="W2t-4F-rBm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iSc-bR-h7F" secondAttribute="trailing" constant="-4000" id="kJe-0Y-wLD"/>
@@ -52,6 +58,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="bottomDoorBg" destination="hih-OR-Be6" id="Q2B-SP-6TW"/>
                         <outlet property="scoreLabel" destination="l2S-wM-joq" id="f66-yF-seH"/>
                         <outlet property="topDoorBg" destination="iSc-bR-h7F" id="VW0-iR-oc6"/>
                     </connections>
