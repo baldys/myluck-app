@@ -15,6 +15,7 @@
 		FA71CE361A2B352E00E69A3D /* myluckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71CE351A2B352E00E69A3D /* myluckTests.swift */; };
 		FAB167761A356A260041D230 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB167751A356A260041D230 /* Game.swift */; };
 		FAB167781A356B020041D230 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB167771A356B020041D230 /* Config.swift */; };
+		FAFE24AC1A35B397005A7440 /* PersonalBestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE24AB1A35B397005A7440 /* PersonalBestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		FA71CE351A2B352E00E69A3D /* myluckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myluckTests.swift; sourceTree = "<group>"; };
 		FAB167751A356A260041D230 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FAB167771A356B020041D230 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		FAFE24AB1A35B397005A7440 /* PersonalBestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalBestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				FAB167741A3569F30041D230 /* classes */,
 				FA71CE1F1A2B352E00E69A3D /* AppDelegate.swift */,
 				FA71CE211A2B352E00E69A3D /* ViewController.swift */,
+				FAFE24AB1A35B397005A7440 /* PersonalBestViewController.swift */,
 				FA71CE231A2B352E00E69A3D /* Main.storyboard */,
 				FA71CE261A2B352E00E69A3D /* Images.xcassets */,
 				FA71CE281A2B352E00E69A3D /* LaunchScreen.xib */,
@@ -228,6 +231,7 @@
 			files = (
 				FA71CE221A2B352E00E69A3D /* ViewController.swift in Sources */,
 				FAB167781A356B020041D230 /* Config.swift in Sources */,
+				FAFE24AC1A35B397005A7440 /* PersonalBestViewController.swift in Sources */,
 				FAB167761A356A260041D230 /* Game.swift in Sources */,
 				FA71CE201A2B352E00E69A3D /* AppDelegate.swift in Sources */,
 			);

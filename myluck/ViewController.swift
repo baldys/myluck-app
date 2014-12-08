@@ -55,6 +55,12 @@ class ViewController: UIViewController {
         topPrizeLabel.hidden = true
     }
     
+    // Shows personal best page
+    func showPersonalBestPage() {
+        let personalBestViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PersonalBestViewController") as PersonalBestViewController
+        self.navigationController?.pushViewController(personalBestViewController, animated: true)
+    }
+    
 
     
 
@@ -128,9 +134,14 @@ class ViewController: UIViewController {
                     } else {
                         bottomPrizeLabel.hidden = false
                     }
+                    
                 } else {
                     // wrong
                     
+                    if game.newPersonalBest {
+                        self.showPersonalBestPage()
+                    }
+                
                 }
                 
                 
@@ -147,11 +158,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         initConfig()
         closeDoors()
-
         
+        
+        
+    
         
         // Do any additional setup after loading the view, typically from a nib.
     }

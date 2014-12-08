@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DV1-1P-wcd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="myluck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" extendedLayoutIncludesOpaqueBars="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="myluck" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -72,6 +72,7 @@
                             <outletCollection property="gestureRecognizers" destination="eCu-5z-360" appends="YES" id="7Cc-ii-AgW"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="kGo-i9-rl2"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="bottomDoorBg" destination="hih-OR-Be6" id="Q2B-SP-6TW"/>
@@ -79,6 +80,7 @@
                         <outlet property="scoreLabel" destination="l2S-wM-joq" id="f66-yF-seH"/>
                         <outlet property="topDoorBg" destination="iSc-bR-h7F" id="VW0-iR-oc6"/>
                         <outlet property="topPrizeLabel" destination="Egq-al-150" id="j0w-7y-82x"/>
+                        <segue destination="jeE-yL-DqQ" kind="show" identifier="showPersonalBest" id="1um-pV-6U4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,12 +90,12 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="140" y="307"/>
+            <point key="canvasLocation" x="952" y="307"/>
         </scene>
         <!--Personal Best View Controller-->
         <scene sceneID="KpG-Pt-Y1r">
             <objects>
-                <viewController storyboardIdentifier="newPersonalBestView" id="jeE-yL-DqQ" customClass="PersonalBestViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PersonalBestViewController" id="jeE-yL-DqQ" customClass="PersonalBestViewController" customModule="myluck" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4CG-Hx-ijP"/>
                         <viewControllerLayoutGuide type="bottom" id="N12-PN-IrC"/>
@@ -106,31 +108,37 @@
                                 <rect key="frame" x="-1" y="0.0" width="321" height="284"/>
                                 <color key="backgroundColor" red="0.4823529411764706" green="0.74509803921568629" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO7-wq-boe">
-                                <rect key="frame" x="0.0" y="256" width="79" height="56"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="2wL-gR-Tg8"/>
-                                    <constraint firstAttribute="width" constant="80" id="fbX-j2-rKP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" red="0.17254901959999999" green="0.50980392159999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411764705883" green="0.65098039215686276" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="opA-ea-NlO" secondAttribute="width" id="Oj0-Cy-MBq"/>
-                            <constraint firstItem="ZO7-wq-boe" firstAttribute="leading" secondItem="YKm-CO-rBf" secondAttribute="leadingMargin" constant="-16" id="RXQ-Uv-0Rv"/>
                             <constraint firstAttribute="height" secondItem="opA-ea-NlO" secondAttribute="height" multiplier="2" id="Yxf-Dk-JQI"/>
-                            <constraint firstAttribute="centerY" secondItem="ZO7-wq-boe" secondAttribute="centerY" id="qPm-2U-1TG"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oT-cI-PJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="605" y="259"/>
+            <point key="canvasLocation" x="1417" y="259"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5gL-yl-bDR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="DV1-1P-wcd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rK3-zn-kkB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uQX-8a-bDu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DcM-fi-BXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="307"/>
         </scene>
     </scenes>
 </document>

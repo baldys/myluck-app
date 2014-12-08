@@ -9,23 +9,26 @@
 import Foundation
 
 
+
 class Game {
-    var streak: Int = 0
-    var topStreak: Int = 0
+    var streak: Int = 0             // current turn
+    var personalBest: Int = 0       // all time
+    var newPersonalBest: Bool = false        // whether the last turn was a personal best
+
     var correctDoor: NSString = ""
-    
-    
+
     
     init() {
-        self.correctDoor = self.randomDoor()
-        
+        // Some shit
+        self.hidePrize()
     }
     
-    // Returns a string: "top" or "bottom"
-    func randomDoor() -> NSString {
+    // Sets self.correctDoor randomly
+    private func hidePrize() {
         var doorNum = Int(arc4random_uniform(UInt32(2)))
-        return doorNum == 0 ? "top" : "bottom"
+        self.correctDoor = doorNum == 0 ? "top" : "bottom"
     }
+    
     
     // Player is picking a door
     // @return bool right or wrong
@@ -34,25 +37,31 @@ class Game {
             self.answeredCorrect()
             return true
         } else {
-            self.answeredWrong()
+            self.gameOver()
             return false
         }
     }
     
     // Player wins
-    func answeredCorrect() {
+    private func answeredCorrect() {
         self.streak += 1
-        
-        self.correctDoor = self.randomDoor()
+        self.hidePrize()
     }
     
     // Player looses
-    func answeredWrong() {
+    private func gameOver() {
+        if self.streak > self.personalBest {
+            self.personalBest = self.streak
+            self.newPersonalBest = true
+        } else {
+            self.newPersonalBest = false
+        }
+
         self.streak = 0
-        
-        self.correctDoor = self.randomDoor()
+        self.hidePrize()
     }
     
+
 
     
     
