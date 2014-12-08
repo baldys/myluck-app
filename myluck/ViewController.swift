@@ -8,9 +8,11 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
 
+    @IBOutlet weak var scoreLabel: UILabel!
     
 
     // Pan has started. aka choosing a side, top or bottom.
@@ -70,6 +72,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set colours
+        self.view.backgroundColor = config.lightColor
+        scoreLabel.textColor = config.lightColor
+
+
+        
+        
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

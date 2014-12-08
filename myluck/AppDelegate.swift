@@ -8,6 +8,16 @@
 
 import UIKit
 
+
+struct config {
+    static var lightColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0)
+    static var darkColor = UIColor(red: 38/255.0, green: 38/255.0, blue: 38/255.0, alpha: 1.0)
+
+
+}
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
