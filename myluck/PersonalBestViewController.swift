@@ -12,10 +12,14 @@ import UIKit
 
 class PersonalBestViewController: UIViewController {
 
+    @IBAction func TapViewAction(sender: UITapGestureRecognizer) {
+        
+        self.backToGame()
+    }
     
     // Shows personal best page
     func backToGame() {
-        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as UIViewController
+        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("gameView") as UIViewController
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -25,7 +29,7 @@ class PersonalBestViewController: UIViewController {
         
         println("PersonalBestViewController loaded")
         
-        backToGame()
+
 
         
         

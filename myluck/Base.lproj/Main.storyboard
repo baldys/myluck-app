@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" extendedLayoutIncludesOpaqueBars="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="myluck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameView" extendedLayoutIncludesOpaqueBars="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="myluck" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -95,7 +95,7 @@
         <!--Personal Best View Controller-->
         <scene sceneID="KpG-Pt-Y1r">
             <objects>
-                <viewController storyboardIdentifier="PersonalBestViewController" id="jeE-yL-DqQ" customClass="PersonalBestViewController" customModule="myluck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="personalBest" id="jeE-yL-DqQ" customClass="PersonalBestViewController" customModule="myluck" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4CG-Hx-ijP"/>
                         <viewControllerLayoutGuide type="bottom" id="N12-PN-IrC"/>
@@ -104,20 +104,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="opA-ea-NlO">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="opA-ea-NlO">
                                 <rect key="frame" x="-1" y="0.0" width="321" height="284"/>
                                 <color key="backgroundColor" red="0.4823529411764706" green="0.74509803921568629" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411764705883" green="0.65098039215686276" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="opA-ea-NlO" secondAttribute="width" id="Oj0-Cy-MBq"/>
                             <constraint firstAttribute="height" secondItem="opA-ea-NlO" secondAttribute="height" multiplier="2" id="Yxf-Dk-JQI"/>
+                            <constraint firstAttribute="centerX" secondItem="opA-ea-NlO" secondAttribute="centerX" constant="0.5" id="n5m-SR-kEm"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="EGX-Wm-SQh" appends="YES" id="E7S-HG-hnq"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oT-cI-PJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="EGX-Wm-SQh">
+                    <connections>
+                        <action selector="TapViewAction:" destination="jeE-yL-DqQ" id="rnd-5M-Ffx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1417" y="259"/>
         </scene>

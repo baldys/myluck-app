@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     
     // Shows personal best page
     func showPersonalBestPage() {
-        let personalBestViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PersonalBestViewController") as PersonalBestViewController
+        let personalBestViewController = self.storyboard?.instantiateViewControllerWithIdentifier("personalBest") as PersonalBestViewController
         self.navigationController?.pushViewController(personalBestViewController, animated: true)
     }
     
