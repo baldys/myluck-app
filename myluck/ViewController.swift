@@ -15,6 +15,24 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
     
+    
+    func resetUI() {
+        // Set to default colours
+        self.view.backgroundColor = colors.primaryLight
+        scoreLabel.textColor = colors.primaryLight
+        
+        topDoorBg.backgroundColor = colors.primaryDark
+        
+
+        // Move door backgrounds out of view and hide them
+        var frame = topDoorBg.frame
+        frame.origin.x = self.view.frame.width * 2
+        topDoorBg.frame = frame
+        topDoorBg.hidden = true
+    }
+    
+
+    
 
     // Pan has started. aka choosing a side, top or bottom.
     // http://stackoverflow.com/questions/6614043/drag-view-from-the-point-you-touch-it-iphone
@@ -40,6 +58,8 @@ class ViewController: UIViewController {
             } else {
                 startPanDoor = "bottom"
             }
+            
+            topDoorBg.hidden = false
 
         } else if(touch.state == UIGestureRecognizerState.Changed) {
             // Move the door in the direction of the swipe
@@ -56,52 +76,10 @@ class ViewController: UIViewController {
                 // Moving left
                 frame.origin.x = self.view.frame.size.width + changeX // changeX is negative
             }
-            frame.origin.x += changeX
-            println("setting frame to")
-            println(frame.origin.x)
-            
-//            frame.origin.y = 0.0
             topDoorBg.frame = frame
             
             
-            return
-            
-            
-            
 
-            
-            
-            var bounds = topDoorBg.bounds
-            
-            
-            
-            
-            bounds.origin.x += changeX
-            
-            
-
-            
-            
-            topDoorBg.bounds = bounds
-            
-            println(bounds.origin.x)
-            
-            //View.frame = CGRectOffset( aView.frame, 10, 10 );
-            
-            
-//            topDoorBg.frame.offset(dx: -1.0, dy:-1.0)
-//
-//            
-//            println(changeX)
-//            
-//            
-//            println(topDoorBg.frame.origin)
-            
-            
-            //println(topDoorBg.frame.origin.x)
-//            topDoorBg.frame = CGRectOffset(topDoorBg.frame, changeX, 0)
-            
-//            println(".")
         } else if(touch.state == UIGestureRecognizerState.Ended) {
             var halfWidth = self.view.bounds.size.width / 2
             var distanceX = abs(touch.locationInView(self.view).x - startPanX)
@@ -109,12 +87,13 @@ class ViewController: UIViewController {
                 println("CHOICE LOCKED IN")
             } else {
                 println("cancelled")
-                
-                var frame = topDoorBg.frame
-                frame.origin.x = self.view.frame.size.width
-                topDoorBg.frame = frame
-                
             }
+            
+            
+            
+            
+            resetUI()
+
 
         }
         
@@ -136,11 +115,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set colours
-        self.view.backgroundColor = colors.primaryLight
-        scoreLabel.textColor = colors.primaryLight
+        resetUI()
         
-        topDoorBg.backgroundColor = colors.primaryDark
+
         
         
         // Do any additional setup after loading the view, typically from a nib.
