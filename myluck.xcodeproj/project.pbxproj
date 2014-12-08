@@ -13,6 +13,8 @@
 		FA71CE271A2B352E00E69A3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA71CE261A2B352E00E69A3D /* Images.xcassets */; };
 		FA71CE2A1A2B352E00E69A3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA71CE281A2B352E00E69A3D /* LaunchScreen.xib */; };
 		FA71CE361A2B352E00E69A3D /* myluckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71CE351A2B352E00E69A3D /* myluckTests.swift */; };
+		FAB167761A356A260041D230 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB167751A356A260041D230 /* Game.swift */; };
+		FAB167781A356B020041D230 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB167771A356B020041D230 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		FA71CE2F1A2B352E00E69A3D /* myluckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myluckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA71CE341A2B352E00E69A3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA71CE351A2B352E00E69A3D /* myluckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myluckTests.swift; sourceTree = "<group>"; };
+		FAB167751A356A260041D230 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		FAB167771A356B020041D230 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		FA71CE1C1A2B352E00E69A3D /* myluck */ = {
 			isa = PBXGroup;
 			children = (
+				FAB167741A3569F30041D230 /* classes */,
 				FA71CE1F1A2B352E00E69A3D /* AppDelegate.swift */,
 				FA71CE211A2B352E00E69A3D /* ViewController.swift */,
 				FA71CE231A2B352E00E69A3D /* Main.storyboard */,
@@ -110,6 +115,15 @@
 				FA71CE341A2B352E00E69A3D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAB167741A3569F30041D230 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				FAB167751A356A260041D230 /* Game.swift */,
+				FAB167771A356B020041D230 /* Config.swift */,
+			);
+			name = classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +227,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA71CE221A2B352E00E69A3D /* ViewController.swift in Sources */,
+				FAB167781A356B020041D230 /* Config.swift in Sources */,
+				FAB167761A356A260041D230 /* Game.swift in Sources */,
 				FA71CE201A2B352E00E69A3D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +423,7 @@
 				FA71CE3B1A2B352E00E69A3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA71CE3C1A2B352E00E69A3D /* Build configuration list for PBXNativeTarget "myluckTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +432,7 @@
 				FA71CE3E1A2B352E00E69A3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

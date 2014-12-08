@@ -18,10 +18,10 @@ class ViewController: UIViewController {
     
     func resetUI() {
         // Set to default colours
-        self.view.backgroundColor = colors.primaryLight
-        scoreLabel.textColor = colors.primaryLight
+        self.view.backgroundColor = Config.colors.primaryLight
+        scoreLabel.textColor = Config.colors.primaryLight
         
-        topDoorBg.backgroundColor = colors.primaryDark
+        topDoorBg.backgroundColor = Config.colors.primaryDark
         
 
         // Move door backgrounds out of view and hide them
