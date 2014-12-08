@@ -51,7 +51,7 @@ class ViewController: UIViewController {
             var frame = topDoorBg.frame
             if(changeX > 0) {
                 // Moving right
-                frame.origin.x = changeX
+                frame.origin.x = changeX - topDoorBg.frame.size.width
             } else {
                 // Moving left
                 frame.origin.x = self.view.frame.size.width + changeX // changeX is negative
