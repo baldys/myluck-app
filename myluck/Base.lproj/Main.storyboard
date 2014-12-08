@@ -69,8 +69,6 @@
                             <constraint firstAttribute="centerX" secondItem="Egq-al-150" secondAttribute="centerX" constant="-0.5" id="vZV-2O-dEa"/>
                         </constraints>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="nMp-nV-xWG" appends="YES" id="MtM-IE-bxa"/>
-                            <outletCollection property="gestureRecognizers" destination="aLH-fZ-QyX" appends="YES" id="6hZ-sD-r1I"/>
                             <outletCollection property="gestureRecognizers" destination="eCu-5z-360" appends="YES" id="7Cc-ii-AgW"/>
                         </connections>
                     </view>
@@ -84,8 +82,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="nMp-nV-xWG"/>
-                <swipeGestureRecognizer direction="right" id="aLH-fZ-QyX"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="eCu-5z-360">
                     <connections>
                         <action selector="PanGestureAction:" destination="BYZ-38-t0r" id="AMC-9h-8hi"/>
@@ -93,6 +89,48 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="140" y="307"/>
+        </scene>
+        <!--Personal Best View Controller-->
+        <scene sceneID="KpG-Pt-Y1r">
+            <objects>
+                <viewController storyboardIdentifier="newPersonalBestView" id="jeE-yL-DqQ" customClass="PersonalBestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4CG-Hx-ijP"/>
+                        <viewControllerLayoutGuide type="bottom" id="N12-PN-IrC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YKm-CO-rBf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="opA-ea-NlO">
+                                <rect key="frame" x="-1" y="0.0" width="321" height="284"/>
+                                <color key="backgroundColor" red="0.4823529411764706" green="0.74509803921568629" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZO7-wq-boe">
+                                <rect key="frame" x="0.0" y="256" width="79" height="56"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="2wL-gR-Tg8"/>
+                                    <constraint firstAttribute="width" constant="80" id="fbX-j2-rKP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" red="0.17254901959999999" green="0.50980392159999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.43529411764705883" green="0.65098039215686276" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="opA-ea-NlO" secondAttribute="width" id="Oj0-Cy-MBq"/>
+                            <constraint firstItem="ZO7-wq-boe" firstAttribute="leading" secondItem="YKm-CO-rBf" secondAttribute="leadingMargin" constant="-16" id="RXQ-Uv-0Rv"/>
+                            <constraint firstAttribute="height" secondItem="opA-ea-NlO" secondAttribute="height" multiplier="2" id="Yxf-Dk-JQI"/>
+                            <constraint firstAttribute="centerY" secondItem="ZO7-wq-boe" secondAttribute="centerY" id="qPm-2U-1TG"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8oT-cI-PJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="605" y="259"/>
         </scene>
     </scenes>
 </document>
