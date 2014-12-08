@@ -23,8 +23,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var topPrizeLabel: UILabel!
     
     
-    // Reset UI and update it to match current game state
-    func resetUI() {
+    // Updates game config to match settings
+    func initConfig() {
         // Setup colors
         self.view.backgroundColor = Config.colors.primaryLight
         scoreLabel.textColor = Config.colors.primaryLight
@@ -33,11 +33,13 @@ class ViewController: UIViewController {
         
         // Set prize 
         bottomPrizeLabel.text = Config.prize
-        bottomPrizeLabel.hidden = true
         topPrizeLabel.text = Config.prize
-        topPrizeLabel.hidden = true
-        
-
+    }
+    
+    
+    // Close the doors and hide the prize
+    func closeDoors() {
+        println("Closing the doors...")
         // Move door backgrounds out of view and hide them
         var frame = topDoorBg.frame
         frame.origin.x = self.view.frame.width * 2
@@ -49,7 +51,8 @@ class ViewController: UIViewController {
         bottomDoorBg.frame = frame2
         bottomDoorBg.hidden = true
         
-        scoreLabel.text = String(game.streak)
+        bottomPrizeLabel.hidden = true
+        topPrizeLabel.hidden = true
     }
     
 
@@ -63,11 +66,9 @@ class ViewController: UIViewController {
     @IBAction func PanGestureAction(touch: UIPanGestureRecognizer) {
         if(touch.state == UIGestureRecognizerState.Began) {
             
-            //            CGPoint location = [touch locationInView:self.view];
-            //            startX = location.x - ViewMain.center.x;
-            //            startY = ViewMain.center.y;
-            
-            println("Started");
+            println("Started")
+            closeDoors()
+
             
             var location = touch.locationInView(self.view)
             startPanX = location.x
@@ -101,16 +102,22 @@ class ViewController: UIViewController {
         } else if(touch.state == UIGestureRecognizerState.Ended) {
             var lockInDistance = Double(self.view.bounds.size.width) * panThreshold
             var distanceX = Double(abs(touch.locationInView(self.view).x - startPanX))
-            if(distanceX >= lockInDistance) {
+            if(distanceX < lockInDistance) {
+                // Cancelled choice
+                println("Cancelled")
+                closeDoors()
+            } else {
+
+                // =========== CHOICE IS MADE ===========
                 println("CHOICE LOCKED IN for \(startPanDoor)")
                 var answeredRight = game.choose(self.startPanDoor)
+                println("right: \(answeredRight)")
                 
                 // Move the background to be full width
                 var targetFrame = startPanDoor == "top" ? topDoorBg : bottomDoorBg
                 var frame = targetFrame.frame
                 frame.origin.x = 0
                 targetFrame.frame = frame
-                
                 
                 
                 // Success or failure?
@@ -122,26 +129,20 @@ class ViewController: UIViewController {
                         bottomPrizeLabel.hidden = false
                     }
                 } else {
+                    // wrong
                     
                 }
                 
                 
-                // Reset after 2 seconds
                 var delta: Int64 = 1 * Int64(NSEC_PER_SEC)
                 var time = dispatch_time(DISPATCH_TIME_NOW, delta)
+                
                 dispatch_after(time, dispatch_get_main_queue(), {
-                    self.resetUI()
+                    self.scoreLabel.text = String(game.streak)
                 });
                 
-                
-            } else {
-                println("Cancelled")
-                resetUI()
-            }
-            
-            
+            } // end touch state
         }
-        
     }
     
     
@@ -160,8 +161,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        resetUI()
-        
+
+        initConfig()
+        closeDoors()
 
         
         
