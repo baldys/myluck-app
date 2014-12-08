@@ -12,7 +12,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var panThreshold = 0.5 // how far the slide must go for it to lock in the answer
+    var panThreshold = 0.6 // how far the slide must go for it to lock in the answer
     
     @IBOutlet weak var topDoorBg: UIView!
     @IBOutlet weak var bottomDoorBg: UIView!
@@ -20,12 +20,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     
     
-    
+    // Reset UI and update it to match current game state
     func resetUI() {
-        // Set to default colours
+        // Setup colors
         self.view.backgroundColor = Config.colors.primaryLight
         scoreLabel.textColor = Config.colors.primaryLight
-        
         topDoorBg.backgroundColor = Config.colors.primaryDark
         bottomDoorBg.backgroundColor = Config.colors.primaryDark
         
