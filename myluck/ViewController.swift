@@ -19,6 +19,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var bottomPrizeLabel: UILabel!
+    @IBOutlet weak var topPrizeLabel: UILabel!
+    
     
     // Reset UI and update it to match current game state
     func resetUI() {
@@ -27,6 +30,12 @@ class ViewController: UIViewController {
         scoreLabel.textColor = Config.colors.primaryLight
         topDoorBg.backgroundColor = Config.colors.primaryDark
         bottomDoorBg.backgroundColor = Config.colors.primaryDark
+        
+        // Set prize 
+        bottomPrizeLabel.text = Config.prize
+        bottomPrizeLabel.hidden = true
+        topPrizeLabel.text = Config.prize
+        topPrizeLabel.hidden = true
         
 
         // Move door backgrounds out of view and hide them
@@ -93,13 +102,44 @@ class ViewController: UIViewController {
             var lockInDistance = Double(self.view.bounds.size.width) * panThreshold
             var distanceX = Double(abs(touch.locationInView(self.view).x - startPanX))
             if(distanceX >= lockInDistance) {
-                println("CHOICE LOCKED IN")
+                println("CHOICE LOCKED IN for \(startPanDoor)")
                 var answeredRight = game.choose(self.startPanDoor)
+                
+                // Move the background to be full width
+                var targetFrame = startPanDoor == "top" ? topDoorBg : bottomDoorBg
+                var frame = targetFrame.frame
+                frame.origin.x = 0
+                targetFrame.frame = frame
+                
+                
+                
+                // Success or failure?
+                if answeredRight {
+                    // Reveal the prize
+                    if startPanDoor == "top" {
+                        topPrizeLabel.hidden = false
+                    } else {
+                        bottomPrizeLabel.hidden = false
+                    }
+                } else {
+                    
+                }
+                
+                
+                // Reset after 2 seconds
+                var delta: Int64 = 1 * Int64(NSEC_PER_SEC)
+                var time = dispatch_time(DISPATCH_TIME_NOW, delta)
+                dispatch_after(time, dispatch_get_main_queue(), {
+                    self.resetUI()
+                });
+                
+                
             } else {
                 println("Cancelled")
+                resetUI()
             }
             
-            resetUI()
+            
         }
         
     }

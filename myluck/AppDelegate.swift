@@ -10,11 +10,7 @@ import UIKit
 
 
 
-
-
 var game = Game()
-
-
 
 
 
