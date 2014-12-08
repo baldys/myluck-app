@@ -84,16 +84,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="nMp-nV-xWG">
-                    <connections>
-                        <action selector="SwipeLeftAction:" destination="BYZ-38-t0r" id="5SG-9c-hEB"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="aLH-fZ-QyX">
-                    <connections>
-                        <action selector="SwipeRightAction:" destination="BYZ-38-t0r" id="aHJ-Wk-iLO"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="nMp-nV-xWG"/>
+                <swipeGestureRecognizer direction="right" id="aLH-fZ-QyX"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="eCu-5z-360">
                     <connections>
                         <action selector="PanGestureAction:" destination="BYZ-38-t0r" id="AMC-9h-8hi"/>

@@ -134,28 +134,14 @@ class ViewController: UIViewController {
                 }
                 
                 
-                var delta: Int64 = 1 * Int64(NSEC_PER_SEC)
-                var time = dispatch_time(DISPATCH_TIME_NOW, delta)
+                // Update score!
+                self.scoreLabel.text = String(game.streak)
                 
-                dispatch_after(time, dispatch_get_main_queue(), {
-                    self.scoreLabel.text = String(game.streak)
-                });
-                
-            } // end touch state
-        }
+            } // end if distane travelled is enough
+        } // end touch state
     }
     
     
-    // Listen for swipes left or right
-    @IBAction func SwipeLeftAction(sender: UISwipeGestureRecognizer) {
-        println("Swiped left")
-        println(sender)
-    }
-    
-    @IBAction func SwipeRightAction(sender: UISwipeGestureRecognizer) {
-        println("Swiped Right")
-        println(sender.locationInView(sender.view))
-    }
     
     
     override func viewDidLoad() {
