@@ -15,6 +15,7 @@
 		FA71CE361A2B352E00E69A3D /* myluckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71CE351A2B352E00E69A3D /* myluckTests.swift */; };
 		FAB167761A356A260041D230 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB167751A356A260041D230 /* Game.swift */; };
 		FAB167781A356B020041D230 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB167771A356B020041D230 /* Config.swift */; };
+		FACF81AB1A36ECDD00F71A35 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF81AA1A36ECDD00F71A35 /* User.swift */; };
 		FAFE24AC1A35B397005A7440 /* PersonalBestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE24AB1A35B397005A7440 /* PersonalBestViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		FA71CE351A2B352E00E69A3D /* myluckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myluckTests.swift; sourceTree = "<group>"; };
 		FAB167751A356A260041D230 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FAB167771A356B020041D230 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		FACF81AA1A36ECDD00F71A35 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FAFE24AB1A35B397005A7440 /* PersonalBestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalBestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB167751A356A260041D230 /* Game.swift */,
+				FACF81AA1A36ECDD00F71A35 /* User.swift */,
 				FAB167771A356B020041D230 /* Config.swift */,
 			);
 			name = classes;
@@ -231,6 +234,7 @@
 			files = (
 				FA71CE221A2B352E00E69A3D /* ViewController.swift in Sources */,
 				FAB167781A356B020041D230 /* Config.swift in Sources */,
+				FACF81AB1A36ECDD00F71A35 /* User.swift in Sources */,
 				FAFE24AC1A35B397005A7440 /* PersonalBestViewController.swift in Sources */,
 				FAB167761A356A260041D230 /* Game.swift in Sources */,
 				FA71CE201A2B352E00E69A3D /* AppDelegate.swift in Sources */,

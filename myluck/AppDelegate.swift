@@ -9,8 +9,8 @@
 import UIKit
 
 
-
-var game = Game()
+var user = User()
+var game = Game(player: user)
 
 
 

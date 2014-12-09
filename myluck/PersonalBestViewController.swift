@@ -29,7 +29,7 @@ class PersonalBestViewController: UIViewController {
         super.viewDidLoad()
         
 
-        self.scoreLabel.text = String(game.personalBest)
+        self.scoreLabel.text = String(user.personalBest)
         
         
         // Do any additional setup after loading the view, typically from a nib.

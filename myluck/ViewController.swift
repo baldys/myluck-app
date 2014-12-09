@@ -183,14 +183,14 @@ class ViewController: UIViewController {
         } else {
             // wrong
             
-            if game.newPersonalBest {
+            if user.newPersonalBest {
                 self.showPersonalBestPage()
             }
             
         }
         
         // Update score!
-        self.scoreLabel.text = String(game.streak)
+        self.scoreLabel.text = String(user.streak)
         
         
     }
