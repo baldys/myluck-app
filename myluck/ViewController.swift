@@ -191,6 +191,8 @@ class ViewController: UIViewController {
         
         // Update score!
         self.scoreLabel.text = String(game.streak)
+        
+        
     }
     
     
@@ -202,9 +204,6 @@ class ViewController: UIViewController {
         initConfig()
         closeDoors()
         
-        
-        
-    
         
         // Do any additional setup after loading the view, typically from a nib.
     }
