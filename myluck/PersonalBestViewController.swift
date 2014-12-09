@@ -31,6 +31,8 @@ class PersonalBestViewController: UIViewController {
 
         self.scoreLabel.text = String(user.personalBest)
         
+        playSound("electric")
+        
         
         // Do any additional setup after loading the view, typically from a nib.
     }

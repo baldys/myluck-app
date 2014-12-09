@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA50D8841A370B3A00D58B9F /* electric.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA50D8801A370B3A00D58B9F /* electric.mp3 */; };
+		FA50D8851A370B3A00D58B9F /* broken-glass.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA50D8811A370B3A00D58B9F /* broken-glass.mp3 */; };
+		FA50D8871A370B3A00D58B9F /* blop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA50D8831A370B3A00D58B9F /* blop.mp3 */; };
 		FA71CE201A2B352E00E69A3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71CE1F1A2B352E00E69A3D /* AppDelegate.swift */; };
 		FA71CE221A2B352E00E69A3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71CE211A2B352E00E69A3D /* ViewController.swift */; };
 		FA71CE251A2B352E00E69A3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA71CE231A2B352E00E69A3D /* Main.storyboard */; };
@@ -16,6 +19,7 @@
 		FAB167761A356A260041D230 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB167751A356A260041D230 /* Game.swift */; };
 		FAB167781A356B020041D230 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB167771A356B020041D230 /* Config.swift */; };
 		FACF81AB1A36ECDD00F71A35 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACF81AA1A36ECDD00F71A35 /* User.swift */; };
+		FACF81B61A37041C00F71A35 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACF81B51A37041C00F71A35 /* AVFoundation.framework */; };
 		FAFE24AC1A35B397005A7440 /* PersonalBestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE24AB1A35B397005A7440 /* PersonalBestViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA50D8801A370B3A00D58B9F /* electric.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = electric.mp3; sourceTree = "<group>"; };
+		FA50D8811A370B3A00D58B9F /* broken-glass.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "broken-glass.mp3"; sourceTree = "<group>"; };
+		FA50D8831A370B3A00D58B9F /* blop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blop.mp3; sourceTree = "<group>"; };
 		FA71CE1A1A2B352E00E69A3D /* myluck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myluck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA71CE1E1A2B352E00E69A3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA71CE1F1A2B352E00E69A3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +50,7 @@
 		FAB167751A356A260041D230 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FAB167771A356B020041D230 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		FACF81AA1A36ECDD00F71A35 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FACF81B51A37041C00F71A35 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FAFE24AB1A35B397005A7440 /* PersonalBestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalBestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACF81B61A37041C00F71A35 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +76,10 @@
 		FA71CE111A2B352E00E69A3D = {
 			isa = PBXGroup;
 			children = (
+				FA50D8801A370B3A00D58B9F /* electric.mp3 */,
+				FA50D8811A370B3A00D58B9F /* broken-glass.mp3 */,
+				FA50D8831A370B3A00D58B9F /* blop.mp3 */,
+				FACF81B51A37041C00F71A35 /* AVFoundation.framework */,
 				FA71CE1C1A2B352E00E69A3D /* myluck */,
 				FA71CE321A2B352E00E69A3D /* myluckTests */,
 				FA71CE1B1A2B352E00E69A3D /* Products */,
@@ -212,7 +225,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA50D8851A370B3A00D58B9F /* broken-glass.mp3 in Resources */,
+				FA50D8871A370B3A00D58B9F /* blop.mp3 in Resources */,
 				FA71CE251A2B352E00E69A3D /* Main.storyboard in Resources */,
+				FA50D8841A370B3A00D58B9F /* electric.mp3 in Resources */,
 				FA71CE2A1A2B352E00E69A3D /* LaunchScreen.xib in Resources */,
 				FA71CE271A2B352E00E69A3D /* Images.xcassets in Resources */,
 			);

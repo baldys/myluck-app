@@ -9,6 +9,18 @@
 import UIKit
 
 
+// Where should this go?
+import AVFoundation
+var audioPlayer = AVAudioPlayer()
+func playSound(name: NSString) {
+    var alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(name, ofType: "mp3")!)
+    var error:NSError?
+    audioPlayer = AVAudioPlayer(contentsOfURL: alertSound, error: &error)
+    audioPlayer.prepareToPlay()
+    audioPlayer.play()
+}
+
+
 var user = User()
 var game = Game(player: user)
 

@@ -9,18 +9,21 @@
 import UIKit
 
 
-
 class ViewController: UIViewController {
+    
+
 
     var panThreshold = 0.6 // how far the slide must go for it to lock in the answer
+    
+
     
     @IBOutlet weak var topDoorBg: UIView!
     @IBOutlet weak var bottomDoorBg: UIView!
 
     @IBOutlet weak var scoreLabel: UILabel!
-    
     @IBOutlet weak var bottomPrizeLabel: UILabel!
     @IBOutlet weak var topPrizeLabel: UILabel!
+    
     
     
     // Updates game config to match settings
@@ -173,6 +176,7 @@ class ViewController: UIViewController {
         
         // Success or failure?
         if answeredRight {
+            playSound("blop")
             // Reveal the prize
             if choice == "top" {
                 topPrizeLabel.hidden = false
@@ -182,6 +186,7 @@ class ViewController: UIViewController {
             
         } else {
             // wrong
+            playSound("broken-glass")
             
             if user.newPersonalBest {
                 self.showPersonalBestPage()
