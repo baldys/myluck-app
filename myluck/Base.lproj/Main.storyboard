@@ -69,7 +69,9 @@
                             <constraint firstAttribute="centerX" secondItem="Egq-al-150" secondAttribute="centerX" constant="-0.5" id="vZV-2O-dEa"/>
                         </constraints>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="eCu-5z-360" appends="YES" id="7Cc-ii-AgW"/>
+                            <outletCollection property="gestureRecognizers" destination="nX2-Tz-k4B" appends="YES" id="4yx-pR-nLJ"/>
+                            <outletCollection property="gestureRecognizers" destination="qYS-2r-XRH" appends="YES" id="mQ4-6E-0Wd"/>
+                            <outletCollection property="gestureRecognizers" destination="tt4-so-S6l" appends="YES" id="s8L-z7-AqP"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="kGo-i9-rl2"/>
@@ -84,11 +86,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="eCu-5z-360">
+                <swipeGestureRecognizer direction="left" id="nX2-Tz-k4B"/>
+                <swipeGestureRecognizer direction="right" id="qYS-2r-XRH"/>
+                <tapGestureRecognizer id="tt4-so-S6l">
                     <connections>
-                        <action selector="PanGestureAction:" destination="BYZ-38-t0r" id="AMC-9h-8hi"/>
+                        <action selector="TapAction:" destination="BYZ-38-t0r" id="vTG-gT-JHS"/>
                     </connections>
-                </panGestureRecognizer>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="952" y="307"/>
         </scene>

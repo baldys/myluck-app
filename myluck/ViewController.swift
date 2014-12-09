@@ -61,6 +61,22 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(personalBestViewController, animated: true)
     }
     
+    
+    
+    @IBAction func TapAction(tap: UITapGestureRecognizer) {
+        closeDoors()
+        
+        var location = tap.locationInView(self.view)
+        var halfHeight = self.view.frame.size.height / 2
+        
+        if(location.y < halfHeight) {
+            makeChoice("top")
+            topDoorBg.hidden = false
+        } else {
+            makeChoice("bottom")
+            bottomDoorBg.hidden = false
+        }
+    }
 
     
 
@@ -69,87 +85,94 @@ class ViewController: UIViewController {
     var startPanX:CGFloat = 0
     var startPanY:CGFloat = 0
     var startPanDoor = ""
-    @IBAction func PanGestureAction(touch: UIPanGestureRecognizer) {
-        if(touch.state == UIGestureRecognizerState.Began) {
-            
-            println("Started")
-            closeDoors()
+//    @IBAction func PanGestureAction(touch: UIPanGestureRecognizer) {
+//        if(touch.state == UIGestureRecognizerState.Began) {
+//            
+//            println("Started")
+//            closeDoors()
+//
+//            
+//            var location = touch.locationInView(self.view)
+//            startPanX = location.x
+//            startPanY = location.y
+//            var halfHeight = self.view.frame.size.height / 2
+//            
+//            if(startPanY < halfHeight) {
+//                startPanDoor = "top"
+//                topDoorBg.hidden = false
+//            } else {
+//                startPanDoor = "bottom"
+//                bottomDoorBg.hidden = false
+//            }
+//
+//        } else if(touch.state == UIGestureRecognizerState.Changed) {
+//            // Move the door in the direction of the swipe
+//            var changeX:CGFloat = touch.locationInView(self.view).x - startPanX
+//            
+//            var targetFrame = startPanDoor == "top" ? topDoorBg : bottomDoorBg
+//            var frame = targetFrame.frame
+//            if(changeX > 0) {
+//                // Moving right
+//                frame.origin.x = changeX - targetFrame.frame.size.width
+//            } else {
+//                // Moving left
+//                frame.origin.x = self.view.frame.size.width + changeX // changeX is negative
+//            }
+//            targetFrame.frame = frame
+//            
+//
+//        } else if(touch.state == UIGestureRecognizerState.Ended) {
+//            var lockInDistance = Double(self.view.bounds.size.width) * panThreshold
+//            var distanceX = Double(abs(touch.locationInView(self.view).x - startPanX))
+//            if(distanceX < lockInDistance) {
+//                // Cancelled choice
+//                println("Cancelled")
+//                closeDoors()
+//            } else {
+//
+//                self.makeChoice(self.startPanDoor)
+//                
+//            } // end if distane travelled is enough
+//        } // end touch state
+//    }
+    
+    
 
-            
-            var location = touch.locationInView(self.view)
-            startPanX = location.x
-            startPanY = location.y
-            var halfHeight = self.view.frame.size.height / 2
-            
-            if(startPanY < halfHeight) {
-                startPanDoor = "top"
-                topDoorBg.hidden = false
+    // =========== CHOICE IS MADE ===========
+    func makeChoice(choice:NSString) {
+        
+
+        println("CHOICE LOCKED IN for \(choice)")
+        var answeredRight = game.choose(choice)
+        println("right: \(answeredRight)")
+        
+        // Move the background to be full width
+        var targetFrame = choice == "top" ? topDoorBg : bottomDoorBg
+        var frame = targetFrame.frame
+        frame.origin.x = 0
+        targetFrame.frame = frame
+        
+        
+        // Success or failure?
+        if answeredRight {
+            // Reveal the prize
+            if choice == "top" {
+                topPrizeLabel.hidden = false
             } else {
-                startPanDoor = "bottom"
-                bottomDoorBg.hidden = false
+                bottomPrizeLabel.hidden = false
             }
-
-        } else if(touch.state == UIGestureRecognizerState.Changed) {
-            // Move the door in the direction of the swipe
-            var changeX:CGFloat = touch.locationInView(self.view).x - startPanX
             
-            var targetFrame = startPanDoor == "top" ? topDoorBg : bottomDoorBg
-            var frame = targetFrame.frame
-            if(changeX > 0) {
-                // Moving right
-                frame.origin.x = changeX - targetFrame.frame.size.width
-            } else {
-                // Moving left
-                frame.origin.x = self.view.frame.size.width + changeX // changeX is negative
+        } else {
+            // wrong
+            
+            if game.newPersonalBest {
+                self.showPersonalBestPage()
             }
-            targetFrame.frame = frame
             
-
-        } else if(touch.state == UIGestureRecognizerState.Ended) {
-            var lockInDistance = Double(self.view.bounds.size.width) * panThreshold
-            var distanceX = Double(abs(touch.locationInView(self.view).x - startPanX))
-            if(distanceX < lockInDistance) {
-                // Cancelled choice
-                println("Cancelled")
-                closeDoors()
-            } else {
-
-                // =========== CHOICE IS MADE ===========
-                println("CHOICE LOCKED IN for \(startPanDoor)")
-                var answeredRight = game.choose(self.startPanDoor)
-                println("right: \(answeredRight)")
-                
-                // Move the background to be full width
-                var targetFrame = startPanDoor == "top" ? topDoorBg : bottomDoorBg
-                var frame = targetFrame.frame
-                frame.origin.x = 0
-                targetFrame.frame = frame
-                
-                
-                // Success or failure?
-                if answeredRight {
-                    // Reveal the prize
-                    if startPanDoor == "top" {
-                        topPrizeLabel.hidden = false
-                    } else {
-                        bottomPrizeLabel.hidden = false
-                    }
-                    
-                } else {
-                    // wrong
-                    
-                    if game.newPersonalBest {
-                        self.showPersonalBestPage()
-                    }
-                
-                }
-                
-                
-                // Update score!
-                self.scoreLabel.text = String(game.streak)
-                
-            } // end if distane travelled is enough
-        } // end touch state
+        }
+        
+        // Update score!
+        self.scoreLabel.text = String(game.streak)
     }
     
     
