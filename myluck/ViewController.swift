@@ -79,12 +79,30 @@ class ViewController: UIViewController {
     }
 
     
-
-    // Pan has started. aka choosing a side, top or bottom.
-    // http://stackoverflow.com/questions/6614043/drag-view-from-the-point-you-touch-it-iphone
-    var startPanX:CGFloat = 0
-    var startPanY:CGFloat = 0
-    var startPanDoor = ""
+    func handleSwipe(swipe: UISwipeGestureRecognizer) {
+        closeDoors()
+        
+        println(swipe.direction)
+        var location = swipe.locationInView(self.view)
+        var halfHeight = self.view.frame.size.height / 2
+        
+        if(location.y < halfHeight) {
+            makeChoice("top")
+            topDoorBg.hidden = false
+        } else {
+            makeChoice("bottom")
+            bottomDoorBg.hidden = false
+        }
+    }
+    
+    
+    @IBAction func swipeLeftAction(sender: UISwipeGestureRecognizer) {
+        self.handleSwipe(sender)
+    }
+    @IBAction func SwipeRightAction(sender: UISwipeGestureRecognizer) {
+        self.handleSwipe(sender)
+    }
+    
 //    @IBAction func PanGestureAction(touch: UIPanGestureRecognizer) {
 //        if(touch.state == UIGestureRecognizerState.Began) {
 //            
